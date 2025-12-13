@@ -1,14 +1,17 @@
-import { log } from 'console';
-import express from 'express'
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import connectDB from "./src/db.js";
 
+dotenv.config();
 const app = express();
+// 
+app.use(cors());
+app.use(express.json());
+app.use("/uploads", express.static("uploads"));
 
-const PORT = process.env.PORT || 4000;
+connectDB();
 
 
-// server is running
-
-app.listen(PORT,() =>{
-    console.log(`Server is running on PORT ${PORT}`);
-    
-})
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
