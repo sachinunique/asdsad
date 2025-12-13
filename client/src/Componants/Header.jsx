@@ -48,30 +48,35 @@ const Header = () => {
         </div>
 
         <NavbarCollapse>
-         
-          <NavbarLink active={path === "/"} as={'div'} className="text-black">
+          <NavbarLink active={path === "/"} as={"div"} className="text-black">
             <Link to={"/"}>Home</Link>
           </NavbarLink>
-           <NavbarLink active={path === "/about"} as={'div'}>
-            <Link to={"/about"} className="text-black">Abouts</Link>
+          <NavbarLink active={path === "/about"} as={"div"}>
+            <Link to={"/about"} className="text-black">
+              Abouts
+            </Link>
           </NavbarLink>
-          <NavbarLink active={path === "/projects"} as={'div'}>
+          <NavbarLink active={path === "/projects"} as={"div"}>
             <Link to={"/projects"}>Projects</Link>
           </NavbarLink>
-          <NavbarLink active={path === "/blogs"} as={'div'}>
+          <NavbarLink active={path === "/blogs"} as={"div"}>
             <Link to={"blogs"}>Blogs</Link>
           </NavbarLink>
-          <Button className="bg-purple-400 lg:hidden inline">
+          <Button className="bg-purple-400 lg:hidden inline" outline>
             <Link to={"signin"}>SignIn</Link>
           </Button>
         </NavbarCollapse>
-
-        <TextInput
-          className="hidden lg:inline"
-          type="text"
-          placeholder="Search..."
-          rightIcon={FaSearch}
-        />
+        <div className="flex gap-2">
+          <TextInput
+            className="hidden lg:inline"
+            type="text"
+            placeholder="Search..."
+            rightIcon={FaSearch}
+          />
+          <Button className="bg-purple-400 hidden lg:inline " outline>
+            <Link to={"signin"}>SignIn</Link>
+          </Button>
+        </div>
       </Navbar>
     </>
   );

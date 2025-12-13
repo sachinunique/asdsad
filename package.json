@@ -1,0 +1,25 @@
+{
+  "name": "blogbyyout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon api/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachinunique/Blog_Website_Sachin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sachinunique/Blog_Website_Sachin/issues"
+  },
+  "homepage": "https://github.com/sachinunique/Blog_Website_Sachin#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
