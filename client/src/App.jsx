@@ -31,6 +31,10 @@ const App = () => {
               element:<SignIn/>
             },
             {
+              path:"/signup",
+              element:<SignUp/>
+            },
+            {
               path:"/about",
               element:<About/>
             },

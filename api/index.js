@@ -17,6 +17,15 @@ connectDB();
 
 app.use('/api/user',userroutes)
 app.use('/api/auth',authrouter)
+app.use((err,req,res,next) =>{
+    const statuscode = err.statuscode || 500;
+    const message = err.message || 'Internal Server Error';
+    res.status(statuscode).json({
+        success :false,
+        statuscode,
+        message
+    })
+})
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));

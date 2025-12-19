@@ -19,20 +19,21 @@ const Header = () => {
   const path = useLocation().pathname;
   return (
     <>
-      <Navbar fluid rounded className="border-b-2">
+     <div className="">
+       <Navbar fluid rounded >
         <NavbarBrand href="/">
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
             Sachin<span>Blog</span>
           </span>
         </NavbarBrand>
-
-        <div className="flex md:order-2 gap-2">
-          <Dropdown
+          
+        <div className="flex gap-4">
+          <Dropdown 
             arrowIcon={false}
             inline
-            label={<Avatar alt="User settings" img="" rounded />}
+            label={<Avatar alt="User settings" className="hidden" img="" rounded />}
           >
-            <DropdownHeader className="flex justify-center">
+            <DropdownHeader className="flex justify-between w-full">
               <span className="block text-sm">Bonnie Green</span>
               <span className="block truncate text-sm font-medium">
                 name@flowbite.com
@@ -44,8 +45,10 @@ const Header = () => {
             <DropdownDivider />
             <DropdownItem>Sign out</DropdownItem>
           </Dropdown>
+        
           <NavbarToggle />
         </div>
+       
 
         <NavbarCollapse>
           <NavbarLink active={path === "/"} as={"div"} className="text-black">
@@ -62,8 +65,8 @@ const Header = () => {
           <NavbarLink active={path === "/blogs"} as={"div"}>
             <Link to={"blogs"}>Blogs</Link>
           </NavbarLink>
-          <Button className="bg-purple-400 lg:hidden inline" outline>
-            <Link to={"signin"}>SignIn</Link>
+          <Button className="bg-purple-400 lg:hidden" outline>
+            <Link to={"/login"}>SignIn</Link>
           </Button>
         </NavbarCollapse>
         <div className="flex gap-2">
@@ -73,11 +76,12 @@ const Header = () => {
             placeholder="Search..."
             rightIcon={FaSearch}
           />
-          <Button className="bg-purple-400 hidden lg:inline " outline>
-            <Link to={"signin"}>SignIn</Link>
+          <Button className="bg-purple-400 hidden lg:inline ">
+            <Link to={"/signup"}>SignIn</Link>
           </Button>
         </div>
       </Navbar>
+     </div>
     </>
   );
 };
